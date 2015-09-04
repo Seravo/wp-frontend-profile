@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: WP Frontend Profile\n"
-"POT-Creation-Date: 2015-09-04 17:49+0200\n"
-"PO-Revision-Date: 2015-09-04 17:49+0200\n"
+"POT-Creation-Date: 2015-09-04 19:10+0200\n"
+"PO-Revision-Date: 2015-09-04 19:10+0200\n"
 "Last-Translator: Onni Hakala <onni@koodimonni.fi>\n"
 "Language-Team: Onni Hakala <onni@koodimonni.fi>\n"
 "Language: fi_FI\n"
@@ -60,6 +60,14 @@ msgstr "﻿Kuvaus/Bio"
 msgid "Edit your description/bio."
 msgstr "Muokkaa kuvausta"
 
+#: functions/default-fields.php:66 functions/tabs.php:41
+msgid "Password"
+msgstr "Salasana"
+
+#: functions/default-fields.php:67 functions/wpfep-functions.php:259
+msgid "New Password"
+msgstr "﻿Uusi salasana"
+
 #: functions/save-fields.php:76 functions/save-fields.php:90
 msgid "There was a problem with updating your profile."
 msgstr "Profiilisi päivittämisessä oli ongelmia."
@@ -68,27 +76,27 @@ msgstr "Profiilisi päivittämisessä oli ongelmia."
 msgid "Your profile was updated successfully!"
 msgstr "Profiilisi päivitettiin onnistuneesti!"
 
-#: functions/save-fields.php:154
+#: functions/save-fields.php:156
 msgid "Password can't be empty."
 msgstr "Salasana ei voi olla tyhjä."
 
-#: functions/save-fields.php:160
+#: functions/save-fields.php:162
 msgid "Please make sure the passwords match."
 msgstr "﻿Varmista, että salasanat täsmäävät."
 
-#: functions/save-fields.php:171
+#: functions/save-fields.php:173
 #, php-format
 msgid "Please make sure your password is a minimum of %d characters long."
 msgstr "﻿Varmista, että salasana on vähintään %d merkkiä pitkä."
 
-#: functions/save-fields.php:185
+#: functions/save-fields.php:187
 msgid ""
 "Your password must contain at least 1 uppercase, 1 lowercase letter and at "
 "least 1 number"
 msgstr ""
 "﻿Salasanassa on oltava vähintään 1 iso, 1 pieni kirjain ja vähintään 1 numero"
 
-#: functions/save-fields.php:201
+#: functions/save-fields.php:203
 #, php-format
 msgid ""
 "Your password was successfully changed and you have been logged out. Please "
@@ -100,14 +108,6 @@ msgstr ""
 #: functions/tabs.php:14
 msgid "Profile"
 msgstr "Profiili"
-
-#: functions/tabs.php:41
-msgid "Password"
-msgstr "Salasana"
-
-#: functions/wpfep-functions.php:259
-msgid "New Password"
-msgstr "﻿Uusi salasana"
 
 #: functions/wpfep-functions.php:261
 msgid "Repeat New Password"
@@ -121,6 +121,11 @@ msgstr "Tallenna päivitetyt kentät"
 msgid "Update"
 msgstr "﻿Päivitä"
 
-#: wp-frontend-profile.php:45
+#: wp-frontend-profile.php:46
 msgid "For security reasons this is not allowed for admin users."
-msgstr "﻿Turvallisuussyistä tämä on kielletty pääkäyttäjiltä."
+msgstr "Turvallisuussyistä lomake on kielletty pääkäyttäjiltä."
+
+#: wp-frontend-profile.php:48
+#, php-format
+msgid "You can edit your profile settings in <a href='%s'>admin panel</a>."
+msgstr "Voit muokata profiilisi asetuksia <a href='%s'>hallintapaneelista</a>."
