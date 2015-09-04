@@ -63,8 +63,8 @@ function wpfep_add_password_tab_fields( $fields ) {
 	
 	$fields[] = array(
 		'id' => 'user_pass',
-		'label' => 'Password',
-		'desc' => 'New Password.',
+		'label' => __('Password','wpptm'),
+		'desc' => __('New Password','wpptm'),
 		'type' => 'password',
 		'classes' => 'user_pass',
 	);
