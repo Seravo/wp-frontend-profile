@@ -1,11 +1,11 @@
 # WP Front End Profile
 
-Contributors: wpmarkuk<br />
+Contributors: wpmarkuk,onnimonni<br />
 Donate link: http://markwilkinson.me/saythanks<br />
 Tags: profile, users, user meta<br />
 Requires at least: 4.0.1<br />
 Tested up to: 4.0.1<br />
-Stable tag: 0.1<br />
+Stable tag: 0.3<br />
 License: GPLv2 or later<br />
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
