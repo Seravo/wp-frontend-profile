@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: WP Frontend Profile\n"
-"POT-Creation-Date: 2015-09-04 19:10+0200\n"
-"PO-Revision-Date: 2015-09-04 19:10+0200\n"
+"POT-Creation-Date: 2015-09-04 19:37+0200\n"
+"PO-Revision-Date: 2015-09-04 19:38+0200\n"
 "Last-Translator: Onni Hakala <onni@koodimonni.fi>\n"
 "Language-Team: Onni Hakala <onni@koodimonni.fi>\n"
 "Language: fi_FI\n"
@@ -121,11 +121,15 @@ msgstr "Tallenna päivitetyt kentät"
 msgid "Update"
 msgstr "﻿Päivitä"
 
-#: wp-frontend-profile.php:46
+#: wp-frontend-profile.php:38
+msgid "Extra profile information"
+msgstr "Lisätiedot"
+
+#: wp-frontend-profile.php:84
 msgid "For security reasons this is not allowed for admin users."
 msgstr "Turvallisuussyistä lomake on kielletty pääkäyttäjiltä."
 
-#: wp-frontend-profile.php:48
+#: wp-frontend-profile.php:86
 #, php-format
 msgid "You can edit your profile settings in <a href='%s'>admin panel</a>."
 msgstr "Voit muokata profiilisi asetuksia <a href='%s'>hallintapaneelista</a>."

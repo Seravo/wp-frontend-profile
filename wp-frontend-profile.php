@@ -29,6 +29,53 @@ require_once dirname( __FILE__ ) . '/functions/tabs.php';
 require_once dirname( __FILE__ ) . '/functions/wpfep-functions.php';
 require_once dirname( __FILE__ ) . '/functions/save-fields.php';
 
+/*
+ * Show custom fields in wp-admin profile.php
+ */
+add_action( 'show_user_profile', 'wpfep_extra_user_profile_fields' );
+add_action( 'edit_user_profile', 'wpfep_extra_user_profile_fields' );
+function wpfep_extra_user_profile_fields( $user ) {
+	$fields = apply_filters('wpfep_fields_profile',array());
+	?>
+	<h3><?php _e("Extra profile information", "wpptm"); ?></h3>
+  <table class="form-table">
+	<?php
+	foreach ( $fields as $field) {
+		if ( in_array($field['id'], array('user_email','first_name','last_name','user_url','description')) ) {
+			continue;
+		}
+?>
+    <tr>
+      <th><label for="<?php echo $field['id']; ?>"><?php echo $field['label']; ?></label></th>
+      <td>
+        <input type="text" name="<?php echo $field['id']; ?>" id="<?php echo $field['id']; ?>" class="regular-text" 
+            value="<?php echo esc_attr( get_the_author_meta( $field['id'], $user->ID ) ); ?>" /><br />
+        <span class="description"><?php echo $field['desc']; ?></span>
+    </td>
+    </tr>
+    <?php } ?>
+  </table>
+<?php
+}
+
+/*
+ * Save custom fields in wp-admin profile.php
+ */
+add_action( 'personal_options_update', 'wpfep_save_extra_user_profile_fields' );
+add_action( 'edit_user_profile_update', 'wpfep_save_extra_user_profile_fields' );
+function wpfep_save_extra_user_profile_fields( $user_id ) {
+  if ( current_user_can( 'edit_user', $user_id ) ) {
+  	$fields = apply_filters('wpfep_fields_profile',array());
+  	foreach ( $fields as $field) {
+			if ( in_array($field['id'], array('user_email','first_name','last_name','user_url','description')) ) {
+				continue;
+			}
+  		update_user_meta( $user_id, $field['id'], sanitize_text_field($_POST[$field['id']]) );
+  	}
+  }
+  return true;
+}
+
 /**
  * function wp_frontend_profile_output()
  *
