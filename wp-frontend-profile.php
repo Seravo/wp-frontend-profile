@@ -76,6 +76,11 @@ function wpfep_save_extra_user_profile_fields( $user_id ) {
   return true;
 }
 
+/*
+ * Shortcode [frontendShowProfile] which uses this plugin 
+ */
+add_shortcode( 'frontendShowProfile', 'wpfep_show_profile' );
+
 /**
  * function wp_frontend_profile_output()
  *
