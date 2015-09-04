@@ -73,7 +73,7 @@ function wpfep_save_fields( $tabs, $user_id ) {
 				if ( is_wp_error( $user_id ) ) {
 					
 					/* update failed */
-					$messages[ 'update_failed' ] = '<p class="error">There was a problem with updating your profile.</p>';
+					$messages[ 'update_failed' ] = __('There was a problem with updating your profile.','wpptm');
 				
 				}
 			
@@ -87,7 +87,7 @@ function wpfep_save_fields( $tabs, $user_id ) {
 				if( $meta == false ) {
 					
 					/* update failed */
-					$messages[ 'update_failed' ] = '<p class="error">There was a problem with updating your profile.</p>';
+					$messages[ 'update_failed' ] = __('There was a problem with updating your profile.','wpptm');
 					
 				}
 				
@@ -119,7 +119,7 @@ function wpfep_save_fields( $tabs, $user_id ) {
 	} else {
 		
 		?>
-		<div class="messages"><p class="updated">Your profile was updated successfully!</p></div>
+		<div class="messages"><p class="updated"><?php __('Your profile was updated successfully!','wpptm'); ?></p></div>
 		<?php
 		
 	}
@@ -150,14 +150,14 @@ function wpfep_save_password( $tabs, $user_id ) {
 	$password_check = $data[ 'user_pass_check' ];
 	
 	/* first lets check we have a password added to save */
-	if( empty( $password ) )
-		return;
-	
+	if( trim(empty( $password )) ) {
+		$messages[ 'password_empty' ] = __("Password can't be empty.",'wpptm');
+
 	/* now lets check the password match */
-	if( $password != $password_check ) {
+	}elseif( $password != $password_check ) {
 		
 		/* add message indicating no match */
-		$messages[ 'password_mismatch' ] = '<p class="error">Please make sure the passwords match.</p>';
+		$messages[ 'password_mismatch' ] = __('Please make sure the passwords match.','wpptm');
 		
 	}
 	
@@ -168,7 +168,7 @@ function wpfep_save_password( $tabs, $user_id ) {
 	if( $pass_length < apply_filters( 'wpfep_password_length', 12 ) ) {
 		
 		/* add message indicating length issue!! */
-		$messages[ 'password_length' ] = '<p class="error">Please make sure your password is a minimum of ' . apply_filters( 'wpfep_password_length', 12 ) . ' characters long.</p>';
+		$messages[ 'password_length' ] = sprintf(__('Please make sure your password is a minimum of %d characters long.','wpptm'), apply_filters( 'wpfep_password_length', 12 ));
 		
 	}
 	
@@ -182,7 +182,7 @@ function wpfep_save_password( $tabs, $user_id ) {
 	if( $pass_complexity == false ) {
 		
 		/* add message indicating complexity issue */
-		$messages[ 'password_complexity' ] = '<p class="error">Your password must contain at least 1 uppercase, 1 lowercase letter and at least 1 number</p>';
+		$messages[ 'password_complexity' ] = __('Your password must contain at least 1 uppercase, 1 lowercase letter and at least 1 number','wpptm');
 		
 	}
 	
@@ -195,8 +195,13 @@ function wpfep_save_password( $tabs, $user_id ) {
 		 */
 		
 		wp_set_password( $password, $user_id );
-		echo '<div class="messages"><p class="updated">You\'re password was successfully changed and you have been logged out. Please <a href="' . esc_url( wp_login_url() ) . '">login again here</a>.</p></div>';
-	
+		?>
+		<div class="messages">
+			<p class="updated">
+				<?php sprintf(__("Your password was successfully changed and you have been logged out. Please <a href='%s'>login</a> again.",'wpptm'), esc_url( wp_login_url() ) ); ?>
+			</p>
+		</div>;
+	<?php
 	/* messages not empty therefore password failed */
 	} else {
 		
@@ -208,7 +213,7 @@ function wpfep_save_password( $tabs, $user_id ) {
 		foreach( $messages as $message ) {
 			
 			/* output the message */
-			echo $message;
+			echo "<p class='error'>".$message."</p>";
 			
 		}
 		

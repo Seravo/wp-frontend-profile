@@ -1,0 +1,118 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: WP Frontend Profile\n"
+"POT-Creation-Date: 2015-09-04 17:22+0200\n"
+"PO-Revision-Date: 2015-09-04 17:26+0200\n"
+"Last-Translator: Onni Hakala <onni@koodimonni.fi>\n"
+"Language-Team: Onni Hakala <onni@koodimonni.fi>\n"
+"Language: fi_FI\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.7.1\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;"
+"esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;_n_noop:1,2;"
+"_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Poedit-SearchPath-0: .\n"
+
+#: functions/default-fields.php:12
+msgid "Email Address"
+msgstr "Sähköpostiosoite"
+
+#: functions/default-fields.php:13
+msgid "Edit your email address - used for resetting your password etc."
+msgstr ""
+"Muokkaa sähköpostiosoitetta - sähköpostia käytetään mm. salasanojen "
+"nollaamiseen."
+
+#: functions/default-fields.php:20
+msgid "First Name"
+msgstr "Etunimi"
+
+#: functions/default-fields.php:21
+msgid "Edit your first name."
+msgstr "Muokkaa etunimeä"
+
+#: functions/default-fields.php:28
+msgid "Last Name"
+msgstr "Sukunimi"
+
+#: functions/default-fields.php:29
+msgid "Edit your last name."
+msgstr "Muokkaa sukunimeä"
+
+#: functions/default-fields.php:36
+msgid "URL"
+msgstr "URL"
+
+#: functions/default-fields.php:37
+msgid "Edit your profile associated URL."
+msgstr "Muokkaa profiilisi URL-osoitetta"
+
+#: functions/default-fields.php:44
+msgid "Description/Bio"
+msgstr "﻿Kuvaus/Bio"
+
+#: functions/default-fields.php:45
+msgid "Edit your description/bio."
+msgstr "Muokkaa kuvausta"
+
+#: functions/save-fields.php:76 functions/save-fields.php:90
+msgid "There was a problem with updating your profile."
+msgstr "Profiilisi päivittämisessä oli ongelmia."
+
+#: functions/save-fields.php:122
+msgid "Your profile was updated successfully!"
+msgstr "Profiilisi päivitettiin onnistuneesti!"
+
+#: functions/save-fields.php:154
+msgid "Password can't be empty."
+msgstr "Salasana ei voi olla tyhjä."
+
+#: functions/save-fields.php:160
+msgid "Please make sure the passwords match."
+msgstr "﻿Varmista, että salasanat täsmäävät."
+
+#: functions/save-fields.php:171
+#, php-format
+msgid "Please make sure your password is a minimum of %d characters long."
+msgstr "﻿Varmista, että salasana on vähintään %d merkkiä pitkä."
+
+#: functions/save-fields.php:185
+msgid ""
+"Your password must contain at least 1 uppercase, 1 lowercase letter and at "
+"least 1 number"
+msgstr ""
+"﻿Salasanassa on oltava vähintään 1 iso, 1 pieni kirjain ja vähintään 1 numero"
+
+#: functions/save-fields.php:201
+#, php-format
+msgid ""
+"Your password was successfully changed and you have been logged out. Please "
+"<a href='%s'>login</a> again."
+msgstr ""
+"﻿Salasanasi on vaihdettu ja sinut on kirjattu ulos. <a href='%s'>Kirjaudu "
+"sisään uudelleen.</a>"
+
+#: functions/tabs.php:14
+msgid "Profile"
+msgstr "Profiili"
+
+#: functions/tabs.php:41
+msgid "Password"
+msgstr "Salasana"
+
+#: functions/wpfep-functions.php:259
+msgid "New Password"
+msgstr "﻿Uusi salasana"
+
+#: functions/wpfep-functions.php:261
+msgid "Repeat New Password"
+msgstr "﻿Toista uusi salasana"
+
+#: wp-frontend-profile.php:35
+msgid "For security reasons this is not allowed for admin users."
+msgstr "﻿Turvallisuussyistä tämä on kielletty pääkäyttäjiltä."

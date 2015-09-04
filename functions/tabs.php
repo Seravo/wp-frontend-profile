@@ -5,12 +5,13 @@
  * @param (array) current array of tabs in the filter
  * @return (array) the newly modified array of tabs
  */
+add_filter( 'wpfep_tabs', 'wpfep_add_profile_tab', 10 );
 function wpfep_add_profile_tab( $tabs ) {
 	
 	/* add our tab to the tabs array */
 	$tabs[] = array(
 		'id' => 'profile', // used for the callback function, if declared or exists and the tab content wrapper id
-		'label' => 'Profile',
+		'label' => __('Profile','wpptm'),
 		'tab_class' => 'profile-tab',
 		'content_class' => 'profile-content',
 		/**
@@ -25,20 +26,19 @@ function wpfep_add_profile_tab( $tabs ) {
 	
 }
 
-add_filter( 'wpfep_tabs', 'wpfep_add_profile_tab', 10 );
-
 /**
  * function wpfep_add_password_tab
  * adds the password tab to the profile output
  * @param (array) current array of tabs in the filter
  * @return (array) the newly modified array of tabs
  */
+add_filter( 'wpfep_tabs', 'wpfep_add_password_tab', 20 );
 function wpfep_add_password_tab( $tabs ) {
 	
 	/* add our tab to the tabs array */
 	$tabs[] = array(
 		'id' => 'password',
-		'label' => 'Password',
+		'label' => __('Password','wpptm'),
 		'tab_class' => 'password-tab',
 		'content_class' => 'password-content',
 	);
@@ -47,5 +47,3 @@ function wpfep_add_password_tab( $tabs ) {
 	return $tabs;
 	
 }
-
-add_filter( 'wpfep_tabs', 'wpfep_add_password_tab', 20 );
