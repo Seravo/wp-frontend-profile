@@ -5,6 +5,7 @@
  * @param (array) $fields are the current array of fields added to this filter.
  * @return (array) $fields are the modified array of fields to pass back to the filter
  */
+add_filter( 'wpfep_fields_profile', 'wpfep_add_profile_tab_meta_fields', 10 );
 function wpfep_add_profile_tab_meta_fields( $fields ) {
 	
 	$fields[] = array(
@@ -51,14 +52,13 @@ function wpfep_add_profile_tab_meta_fields( $fields ) {
 	
 }
 
-add_filter( 'wpfep_fields_profile', 'wpfep_add_profile_tab_meta_fields', 10 );
-
 /**
  * wpfep_add_password_tab_fields()
  * adds the password update fields to the passwords tab
  * @param (array) $fields are the current array of fields added to this filter.
  * @return (array) $fields are the modified array of fields to pass back to the filter
  */
+add_filter( 'wpfep_fields_password', 'wpfep_add_password_tab_fields', 10 );
 function wpfep_add_password_tab_fields( $fields ) {
 	
 	$fields[] = array(
@@ -72,5 +72,3 @@ function wpfep_add_password_tab_fields( $fields ) {
 	return $fields;
 
 }
-
-add_filter( 'wpfep_fields_password', 'wpfep_add_password_tab_fields', 10 );

@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: WP Frontend Profile\n"
-"POT-Creation-Date: 2015-09-04 17:22+0200\n"
-"PO-Revision-Date: 2015-09-04 17:26+0200\n"
+"POT-Creation-Date: 2015-09-04 17:49+0200\n"
+"PO-Revision-Date: 2015-09-04 17:49+0200\n"
 "Last-Translator: Onni Hakala <onni@koodimonni.fi>\n"
 "Language-Team: Onni Hakala <onni@koodimonni.fi>\n"
 "Language: fi_FI\n"
@@ -18,45 +18,45 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Poedit-SearchPath-0: .\n"
 
-#: functions/default-fields.php:12
+#: functions/default-fields.php:13
 msgid "Email Address"
 msgstr "Sähköpostiosoite"
 
-#: functions/default-fields.php:13
+#: functions/default-fields.php:14
 msgid "Edit your email address - used for resetting your password etc."
 msgstr ""
 "Muokkaa sähköpostiosoitetta - sähköpostia käytetään mm. salasanojen "
 "nollaamiseen."
 
-#: functions/default-fields.php:20
+#: functions/default-fields.php:21
 msgid "First Name"
 msgstr "Etunimi"
 
-#: functions/default-fields.php:21
+#: functions/default-fields.php:22
 msgid "Edit your first name."
 msgstr "Muokkaa etunimeä"
 
-#: functions/default-fields.php:28
+#: functions/default-fields.php:29
 msgid "Last Name"
 msgstr "Sukunimi"
 
-#: functions/default-fields.php:29
+#: functions/default-fields.php:30
 msgid "Edit your last name."
 msgstr "Muokkaa sukunimeä"
 
-#: functions/default-fields.php:36
+#: functions/default-fields.php:37
 msgid "URL"
 msgstr "URL"
 
-#: functions/default-fields.php:37
+#: functions/default-fields.php:38
 msgid "Edit your profile associated URL."
 msgstr "Muokkaa profiilisi URL-osoitetta"
 
-#: functions/default-fields.php:44
+#: functions/default-fields.php:45
 msgid "Description/Bio"
 msgstr "﻿Kuvaus/Bio"
 
-#: functions/default-fields.php:45
+#: functions/default-fields.php:46
 msgid "Edit your description/bio."
 msgstr "Muokkaa kuvausta"
 
@@ -113,6 +113,14 @@ msgstr "﻿Uusi salasana"
 msgid "Repeat New Password"
 msgstr "﻿Toista uusi salasana"
 
-#: wp-frontend-profile.php:35
+#: functions/wpfep-functions.php:303
+msgid "Save updated fields."
+msgstr "Tallenna päivitetyt kentät"
+
+#: functions/wpfep-functions.php:304
+msgid "Update"
+msgstr "﻿Päivitä"
+
+#: wp-frontend-profile.php:45
 msgid "For security reasons this is not allowed for admin users."
 msgstr "﻿Turvallisuussyistä tämä on kielletty pääkäyttäjiltä."

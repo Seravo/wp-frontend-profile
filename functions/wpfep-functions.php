@@ -300,8 +300,8 @@ function wpfep_tab_content_save( $tab, $user_id ) {
 	?>
 	
 	<div class="wpfep-save">
-		<label class="wpfep_save_description">Save this tabs updated fields.</label>
-		<input type="submit" class="wpfep_save" name="<?php echo esc_attr( $tab[ 'id' ] ); ?>[wpfep_save]" value="Update <?php echo esc_attr( $tab[ 'label' ] ); ?>" />
+		<label class="wpfep_save_description"><?php _e('Save updated fields.','wpptm'); ?></label>
+		<input type="submit" class="wpfep_save" name="<?php echo esc_attr( $tab[ 'id' ] ); ?>[wpfep_save]" value="<?php echo __('Update'); ?>" />
 	</div>
 	
 	<?php
