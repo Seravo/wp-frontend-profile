@@ -1,12 +1,13 @@
 <?php
 /*
-Plugin Name: WP Front End Profile
+Plugin Name: WP Frontend Profile
+
 Description: This plugin allows users to easily edit their profile information on the front end rather than having to go into the dashboard to make changes to password, email address and other user meta data.
-Version:     0.2
-Author:      Mark Wilkinson
-Author URI:  http://markwilkinson.me
+Version:     0.3
+Author:      Onni Hakala
+Author URI:  http://seravo.fi
 Text Domain: wpptm
-License:     GPL v2 or later
+License:     GPL v3 or later
 */
 
 /***************************************************************
@@ -30,8 +31,10 @@ function wpfep_show_profile() {
 		return;
 	
 	/* if you're an admin - too risky to allow front end editing */
-	if( current_user_can( 'manage_options' ) )
+	if( current_user_can( 'manage_options' ) ) {
+		_e('For security reasons this is not allowed for admin users.','wpptm');
 		return;
+	}
 
 	?>
 	

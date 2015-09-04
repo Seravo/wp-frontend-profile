@@ -1,0 +1,17 @@
+{
+  "name": "seravo/wp-frontend-profile",
+  "type": "wordpress-mu-plugin",
+  "license": "GPLv3",
+  "description": "Allow user editing in frontend.",
+  "homepage": "https://github.com/Seravo/wp-frontend-profile",
+  "authors": [
+    {
+      "name": "Onni Hakala",
+      "email": "onni@seravo.fi",
+      "homepage": "https://github.com/onnimonni"
+    }
+  ],
+  "keywords": [
+    "wordpress","frontend", "user", "profile", "settings"
+  ]
+}
