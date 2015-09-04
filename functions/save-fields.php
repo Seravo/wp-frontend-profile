@@ -150,7 +150,9 @@ function wpfep_save_password( $tabs, $user_id ) {
 	$password_check = $data[ 'user_pass_check' ];
 	
 	/* first lets check we have a password added to save */
-	if( trim(empty( $password )) ) {
+	if( empty( $data )) {
+		return;
+	} elseif( trim(empty( $password )) ) {
 		$messages[ 'password_empty' ] = __("Password can't be empty.",'wpptm');
 
 	/* now lets check the password match */
