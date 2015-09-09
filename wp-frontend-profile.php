@@ -30,22 +30,17 @@ require_once dirname( __FILE__ ) . '/functions/wpfep-functions.php';
 require_once dirname( __FILE__ ) . '/functions/save-fields.php';
 
 /*
- * Show custom fields in wp-admin profile.php and user-new.php
+ * Show custom fields in wp-admin profile.php
  */
 add_action( 'show_user_profile', 'wpfep_extra_user_profile_fields' );
 add_action( 'edit_user_profile', 'wpfep_extra_user_profile_fields' );
-// For new users
-add_action( 'user_new_form','wpfep_extra_user_profile_fields');
+add_action('user_new_form','wpfep_extra_user_profile_fields');
 function wpfep_extra_user_profile_fields( $user ) {
-	$fields = apply_filters('wpfep_fields_profile',array());
 	?>
 	<h3><?php _e("Extra profile information", "wpptm"); ?></h3>
   <table class="form-table">
 	<?php
-	foreach ( $fields as $field) {
-		if ( in_array($field['id'], array('user_email','first_name','last_name','user_url','description')) ) {
-			continue;
-		}
+	foreach ( wpfep_extra_user_fields() as $field) {
 ?>
     <tr>
       <th><label for="<?php echo $field['id']; ?>"><?php echo $field['label']; ?></label></th>
@@ -61,24 +56,59 @@ function wpfep_extra_user_profile_fields( $user ) {
 }
 
 /*
- * Save custom fields in wp-admin profile.php and user-new.php
+ * Save custom fields in wp-admin profile.php
  */
 add_action( 'personal_options_update', 'wpfep_save_extra_user_profile_fields' );
 add_action( 'edit_user_profile_update', 'wpfep_save_extra_user_profile_fields' );
-// For new users
 add_action( 'user_register', 'wpfep_save_extra_user_profile_fields');
 
 function wpfep_save_extra_user_profile_fields( $user_id ) {
   if ( current_user_can( 'edit_user', $user_id ) ) {
-  	$fields = apply_filters('wpfep_fields_profile',array());
-  	foreach ( $fields as $field) {
-			if ( in_array($field['id'], array('user_email','first_name','last_name','user_url','description')) ) {
-				continue;
-			}
+  	foreach ( wpfep_extra_user_fields() as $field) {
   		update_user_meta( $user_id, $field['id'], sanitize_text_field($_POST[$field['id']]) );
   	}
   }
   return true;
+}
+
+add_filter('manage_users_columns', 'wpfep_add_user_columns');
+function wpfep_add_user_columns($columns) {
+	//wp_die("<pre>".print_r(wpfep_extra_user_fields())."</pre>");
+		foreach (wpfep_extra_user_fields() as $field) {
+			$columns[$field['id']] = $field['label'];
+			unset($columns['posts']);
+		}
+    return $columns;
+}
+
+add_action('manage_users_custom_column',  'wpfep_show_user_columns_content', 10, 3);
+function wpfep_show_user_columns_content($value, $column_name, $user_id) {
+    foreach (wpfep_extra_user_fields() as $field) {
+			if ( $field['id'] == $column_name ) {
+				$value = get_user_meta($user_id,$field['id'],true);
+				return $value;
+			}
+		}
+    return $value;
+}
+
+/*
+ * Helper to get extra user fields
+ */
+function wpfep_extra_user_fields() {
+	static $cache = null;
+
+	if ($cache === null) {
+		$fields = apply_filters('wpfep_fields_profile',array());
+		// unset basic fields
+		foreach ($fields as $key => $value) {
+			if( in_array($value['id'],array('email','user_email','first_name','last_name','user_url','description')) ) {
+				unset($fields[$key]);	
+			}
+		}
+     $cache = $fields;
+  }
+  return $cache;
 }
 
 /*
