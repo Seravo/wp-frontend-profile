@@ -30,10 +30,12 @@ require_once dirname( __FILE__ ) . '/functions/wpfep-functions.php';
 require_once dirname( __FILE__ ) . '/functions/save-fields.php';
 
 /*
- * Show custom fields in wp-admin profile.php
+ * Show custom fields in wp-admin profile.php and user-new.php
  */
 add_action( 'show_user_profile', 'wpfep_extra_user_profile_fields' );
 add_action( 'edit_user_profile', 'wpfep_extra_user_profile_fields' );
+// For new users
+add_action( 'user_new_form','wpfep_extra_user_profile_fields');
 function wpfep_extra_user_profile_fields( $user ) {
 	$fields = apply_filters('wpfep_fields_profile',array());
 	?>
@@ -59,10 +61,13 @@ function wpfep_extra_user_profile_fields( $user ) {
 }
 
 /*
- * Save custom fields in wp-admin profile.php
+ * Save custom fields in wp-admin profile.php and user-new.php
  */
 add_action( 'personal_options_update', 'wpfep_save_extra_user_profile_fields' );
 add_action( 'edit_user_profile_update', 'wpfep_save_extra_user_profile_fields' );
+// For new users
+add_action( 'user_register', 'wpfep_save_extra_user_profile_fields');
+
 function wpfep_save_extra_user_profile_fields( $user_id ) {
   if ( current_user_can( 'edit_user', $user_id ) ) {
   	$fields = apply_filters('wpfep_fields_profile',array());
